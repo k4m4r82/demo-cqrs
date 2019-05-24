@@ -6,6 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CommandHandlers\CreateUpdateCustomerCommandHandler.cs" />
+    <Compile Remove="CommandHandlers\DeleteCustomerCommandHandler.cs" />
+    <Compile Remove="Commands\CreateUpdateCustomerCommand.cs" />
+    <Compile Remove="Commands\DeleteCustomerCommand.cs" />
+    <Compile Remove="Queries\GetAllCustomersQuery.cs" />
+    <Compile Remove="Queries\GetCustomerByCodeQuery.cs" />
+    <Compile Remove="QueryHandler\GetAllCustomersQueryHandler.cs" />
+    <Compile Remove="QueryHandler\GetCustomerByCodeQueryHandler.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="1.60.6" />
     <PackageReference Include="MediatR" Version="7.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
