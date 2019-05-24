@@ -8,8 +8,8 @@ using CQRSUsingMediatR.Model.DomainModel.Entity;
 
 namespace CQRSUsingMediatR.Queries
 {
-    public class CustomerByCodeQuery : IRequest<Customer>
+    public class GetAllCustomersQuery : IRequest<List<Customer>>
     {
-        public string CustomerId { get; set; }
+        
     }
 }

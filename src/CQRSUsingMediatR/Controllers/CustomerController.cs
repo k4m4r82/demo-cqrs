@@ -24,14 +24,14 @@ namespace CQRSUsingMediatR.Controllers
         [HttpGet, Route("get_by_id")]
         public async Task<IActionResult> GetById(string id)
         {
-            var list = await _mediator.Send(new CustomerByCodeQuery { CustomerId = id });
+            var list = await _mediator.Send(new GetCustomerByCodeQuery { CustomerId = id });
             return Ok(list);
         }
 
         [HttpGet, Route("get_all")]
         public async Task<IActionResult> GetAll()
         {
-            var list = await _mediator.Send(new CustomerAllQuery());
+            var list = await _mediator.Send(new GetAllCustomersQuery());
             return Ok(list);
         }
 

@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 using MediatR;
 using CQRSUsingMediatR.Model.DomainModel.Repository;
 using CQRSUsingMediatR.Model.DomainModel.Entity;
+using CQRSUsingMediatR.Commands;
 
-namespace CQRSUsingMediatR.Commands
+namespace CQRSUsingMediatR.CommandHandlers
 {
     public class DeleteCustomerCommandHandler : IRequestHandler<DeleteCustomerCommand, bool>
     {

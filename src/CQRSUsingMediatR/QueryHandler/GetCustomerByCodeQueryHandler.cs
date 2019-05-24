@@ -7,19 +7,20 @@ using MediatR;
 using CQRSUsingMediatR.Model.DomainModel.Entity;
 using CQRSUsingMediatR.Model.DomainModel.Repository;
 using System.Threading;
+using CQRSUsingMediatR.Queries;
 
-namespace CQRSUsingMediatR.Queries
+namespace CQRSUsingMediatR.QueryHandler
 {
-    public class CustomerByCodeQueryHandler : IRequestHandler<CustomerByCodeQuery, Customer>
+    public class GetCustomerByCodeQueryHandler : IRequestHandler<GetCustomerByCodeQuery, Customer>
     {
         private readonly ICustomerRepository _repository;
 
-        public CustomerByCodeQueryHandler(ICustomerRepository repository)
+        public GetCustomerByCodeQueryHandler(ICustomerRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<Customer> Handle(CustomerByCodeQuery request, CancellationToken cancellationToken)
+        public async Task<Customer> Handle(GetCustomerByCodeQuery request, CancellationToken cancellationToken)
         {
             var obj = await _repository.GetById(request.CustomerId);
             return obj;
