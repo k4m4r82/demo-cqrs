@@ -43,7 +43,7 @@ namespace CQRSUsingMediatR.Controllers
         }
 
         [HttpPost, Route("delete")]
-        public async Task<IActionResult> Delete([FromBody] DeleteCustomerCommand command)
+        public async Task<IActionResult> Delete([FromBody] DeleteCustomerCommandX command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);

@@ -12,7 +12,7 @@ using System.Threading;
 namespace CQRSUsingMediatR.CommandHandlers
 {
     public class CustomerCommandHandler : IRequestHandler<CreateUpdateCustomerCommand, bool>,
-                                          IRequestHandler<DeleteCustomerCommand, bool>
+                                          IRequestHandler<DeleteCustomerCommandX, bool>
     {
         private readonly ICustomerRepository _repository;
 
@@ -42,7 +42,7 @@ namespace CQRSUsingMediatR.CommandHandlers
             return result > 0;
         }
 
-        public async Task<bool> Handle(DeleteCustomerCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(DeleteCustomerCommandX request, CancellationToken cancellationToken)
         {
             var result = await _repository.Delete(new Customer { customer_id = request.customer_id });
             return result > 0;

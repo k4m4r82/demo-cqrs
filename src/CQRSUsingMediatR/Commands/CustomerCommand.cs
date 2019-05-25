@@ -14,7 +14,7 @@ namespace CQRSUsingMediatR.Commands
         public string address { get; set; }
     }
 
-    public class DeleteCustomerCommand : IRequest<bool>
+    public class DeleteCustomerCommandX : IRequest<bool>
     {
         public string customer_id { get; set; }
     }

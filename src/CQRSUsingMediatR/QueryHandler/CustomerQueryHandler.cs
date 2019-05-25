@@ -11,12 +11,12 @@ using CQRSUsingMediatR.Queries;
 
 namespace CQRSUsingMediatR.QueryHandler
 {
-    public class CustomersQueryHandler : IRequestHandler<GetCustomerByCodeQuery, Customer>,
-                                         IRequestHandler<GetAllCustomersQuery, List<Customer>>
+    public class CustomerQueryHandler : IRequestHandler<GetCustomerByCodeQuery, Customer>,
+                                        IRequestHandler<GetAllCustomersQuery, List<Customer>>
     {
         private readonly ICustomerRepository _repository;
 
-        public CustomersQueryHandler(ICustomerRepository repository)
+        public CustomerQueryHandler(ICustomerRepository repository)
         {
             _repository = repository;
         }
